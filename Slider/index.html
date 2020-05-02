@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div id="container">
+            <img src="" alt="" id="picture">
+        </div>
+            <button id='btnRight'>
+                <img src="icons/buttonRight.png" alt="forward" class='button'>
+            </button>
+            <button id='btnLeft'>
+                <img src="icons/buttonLeft.png" alt="backward" class='button'>
+            </button>
+       
+        <div id='counter'>cośtam/5</div>
+    </main>
+
+    <script>
+        // 1. Ustawiam addEventListener osobno na btnLeft i na btnRight
+        // 2. Po kliknięciu na btnRight ma podmieniać innerHTML na kolejny obrazek oraz zwiększać licznik
+        // 3. Po kliknięciu na btnLeft ma podmieniać innerHTML na poprzedni obrazek oraz zmniejszać licznik
+        // 4. Po dojechaniu do końca listy obrazków btnRight ma się zdezaktywować
+        // 5. Po dojechaniu do początku listy obrazków btnLeft ma się zdezaktywować
+
+        // Wrzucam ilość obrazków do tablicy/ albo tworzę Node List i przypisuję do zmiennej
+        let btnRight = document.querySelector('#btnRight');
+        let btnLeft = document.querySelector('#btnLeft');
+        let counter = document.querySelector('#counter');
+        let actualPic = document.querySelector("#container");
+        
+        counter.innerHTML= `1/5`;
+        let number=1;
+        let pic = `img/${number}.jpg`;
+        actualPic.innerHTML=`<img src="${pic}" alt="photo" id="picture">`;
+       
+        
+      
+        const nextPic = function(){
+            if(number <=4){
+                pic = `img/${++number}.jpg`;
+                document.querySelector("#container").innerHTML=`<img src="${pic}" alt="photo" id="picture">`;
+                counter.innerHTML= `${number}/5`;
+            }
+            else if(number > 4){
+                console.log("przestań w przód");
+                btnRight.disabled=true;
+            }
+        }
+
+        const prevPic = function(){
+            if(number >1){
+                pic = `img/${--number}.jpg`;
+                document.querySelector("#container").innerHTML=`<img src="${pic}" alt="photo" id="picture">`;
+                counter.innerHTML= `${number}/5`;
+            }
+            else if(number==1){
+                btnLeft.disabled=true;
+                console.log("przestań w tył");
+            }
+        }
+
+        btnRight.addEventListener('click', nextPic);
+        btnLeft.addEventListener('click', prevPic);
+
+    </script>
+</body>
+</html>
