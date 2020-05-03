@@ -34,42 +34,35 @@
         let btnLeft = document.querySelector('#btnLeft');
         let counter = document.querySelector('#counter');
         let actualPic = document.querySelector("#container");
-        
-        counter.innerHTML= `1/5`;
         let number=1;
-        let pic = `img/${number}.jpg`;
-        actualPic.innerHTML=`<img src="${pic}" alt="photo" id="picture">`;
-       
         
-      
+        const init = function(){
+            counter.innerHTML= `1/5`;
+            actualPic.innerHTML=`<img src="img/${number}.jpg" alt="photo" id="picture">`;
+            btnLeft.disabled=true;
+        }
+        
         const nextPic = function(){
             if(number <=4){
-                pic = `img/${++number}.jpg`;
-                document.querySelector("#container").innerHTML=`<img src="${pic}" alt="photo" id="picture">`;
+                actualPic.innerHTML=`<img src="img/${++number}.jpg" alt="photo" id="picture">`;
                 counter.innerHTML= `${number}/5`;
                 btnLeft.disabled=false;
-            }
-            else if(number > 4){
-                console.log("przestań w przód");
-                btnRight.disabled=true;
+                if(number==5) btnRight.disabled=true;
             }
         }
 
         const prevPic = function(){
             if(number >1){
-                pic = `img/${--number}.jpg`;
-                document.querySelector("#container").innerHTML=`<img src="${pic}" alt="photo" id="picture">`;
+                actualPic.innerHTML=`<img src="img/${--number}.jpg" alt="photo" id="picture">`;
                 counter.innerHTML= `${number}/5`;
                 btnRight.disabled=false;
-            }
-            else if(number==1){
-                btnLeft.disabled=true;
-                console.log("przestań w tył");
+                if(number==1) btnLeft.disabled=true;
             }
         }
 
         btnRight.addEventListener('click', nextPic);
         btnLeft.addEventListener('click', prevPic);
+        window.addEventListener('load', init);
 
     </script>
 </body>
