@@ -10,21 +10,25 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
+    align-content: center;
+    /* position: relative; */
 }
 #container{
-    height: 100%;
-    width: 80%;
-    background-color: blue;
-    /* position: relative; */
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+
 }
 
 #picture{
     height: 100%;
     width: 80%;
+    align-self: center;
+    display: block;
+   
 }  
 
-#btnRight{
+/* #btnRight{
     width: 50px;
     height: 50px;
     position: absolute;
@@ -49,7 +53,7 @@ body{
     top: 250px;
     left: 0;
     transform: translate(0, -50%);
-}
+} */
 
 #counter{
     text-align: center;
