@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main>
+    <main id="main">
         <div id="container">
             <img src="" alt="" id="picture">
         </div>
@@ -47,6 +47,7 @@
                 pic = `img/${++number}.jpg`;
                 document.querySelector("#container").innerHTML=`<img src="${pic}" alt="photo" id="picture">`;
                 counter.innerHTML= `${number}/5`;
+                btnLeft.disabled=false;
             }
             else if(number > 4){
                 console.log("przestań w przód");
@@ -59,6 +60,7 @@
                 pic = `img/${--number}.jpg`;
                 document.querySelector("#container").innerHTML=`<img src="${pic}" alt="photo" id="picture">`;
                 counter.innerHTML= `${number}/5`;
+                btnRight.disabled=false;
             }
             else if(number==1){
                 btnLeft.disabled=true;
