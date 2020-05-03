@@ -1,5 +1,5 @@
 body{
-    background-color: grey;
+    background-color: #e1c596;
     margin: 0;
     padding: 0;
     font-family: 'Jost', sans-serif;
@@ -11,55 +11,84 @@ body{
     justify-content: center;
     align-items: center;
     align-content: center;
-    /* position: relative; */
+    position: relative;
+    /* background-color: blue; */
+}
+#wrapper{
+    position: relative;
+    /* background-color: yellow; */
 }
 #container{
     display:flex;
     flex-direction: column;
     justify-content: center;
-
+    
 }
 
 #picture{
-    height: 100%;
-    width: 80%;
+    /* height: 100%;
+    width: 80%; */
     align-self: center;
     display: block;
+    position: relative;
    
 }  
 
-/* #btnRight{
-    width: 50px;
-    height: 50px;
+#btnRight{
+    width: 60px;
+    height: 60px;
     position: absolute;
-    top: 250px;
-    left: 850px;
-    transform: translate(0, -50%);
     font-size: 20px;
+    top: 50%;
+    left:100%;
+    transform: translate(-100%, -50%);
+    border: 0;
+    background-color: #643d36;
+}
+#btnRight:hover{
+    background-color: #ab8673;
+}
+#btnRight:disabled{
+    background-color: #ab8673;
+    opacity: 0.6;
 }
 
-#btnRight:disabled{
-    background-color: red;
+#btnLeft:hover{
+    background-color: #ab8673;
 }
 
 #btnLeft:disabled{
-    background-color: red;
+    background-color: #ab8673;
+    opacity: 0.6;
 }
 
 #btnLeft{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     position: absolute;
-    top: 250px;
-    left: 0;
+    top: 50%;
+    left:0;
+    border: 0;
     transform: translate(0, -50%);
-} */
+    background-color:#643d36;
+}
 
 #counter{
     text-align: center;
     margin-top: 10px;
+    font-size: 2rem;
+    color: white;
 }
-.button{
-    width: 20px;
-    height: 20px;
-} */
+#forward{
+    width: 40px;
+    height: 40px;
+    padding-left: 4px;
+    padding-top: 3px;
+
+} 
+#backward{
+    width: 40px;
+    height: 40px;
+    padding-right: 4px;
+    padding-top: 3px;
+} 

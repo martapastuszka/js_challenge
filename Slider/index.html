@@ -9,18 +9,19 @@
 </head>
 <body>
     <main id="main">
-        <div id="container">
-            <img src="" alt="" id="picture">
-        </div>
+        <div id="wrapper">
+            <div id="container">
+             <img src="" alt="" id="picture">
+            </div>
             <button id='btnRight'>
-                <img src="icons/buttonRight.png" alt="forward" class='button'>
+                <img src="icons/buttonRight.png" alt="forward" id='forward'>
             </button>
             <button id='btnLeft'>
-                <img src="icons/buttonLeft.png" alt="backward" class='button'>
+                <img src="icons/buttonLeft.png" alt="backward" id='backward'>
             </button>
-       
-        <div id='counter'>cośtam/5</div>
+        </div>
     </main>
+    <div id='counter'>cośtam/5</div>
 
     <script>
         // 1. Ustawiam addEventListener osobno na btnLeft i na btnRight
@@ -35,7 +36,7 @@
         let counter = document.querySelector('#counter');
         let actualPic = document.querySelector("#container");
         let number=1;
-        
+
         const init = function(){
             counter.innerHTML= `1/5`;
             actualPic.innerHTML=`<img src="img/${number}.jpg" alt="photo" id="picture">`;
